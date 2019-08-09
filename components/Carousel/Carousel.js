@@ -17,3 +17,48 @@
     <div class="right-button"> > </div>
   </div>
 */
+const carouselContainer = document.querySelector('.carousel-container')
+
+carouselContainer.appendChild(createCarousel())
+
+function createCarousel() {
+  const carousel = document.createElement('dive')
+  carousel.classList.add('carousel')
+
+  const leftButton = document.createElement('div')
+  leftButton.classList.add('left-button')
+  leftButton.textContent = ' < '
+
+  const rightButton = document.createElement('div')
+  rightButton.classList.add('right-button')
+  rightButton.textContent = ' > '
+
+  const mountainImg = document.createElement('img')
+  mountainImg.src = "./assets/carousel/mountains.jpeg"
+
+  const computerImg = document.createElement('img')
+  computerImg.src = "./assets/carousel/computer.jpeg"
+
+  const treesImg = document.createElement('img')
+  treesImg.src = "./assets/carousel/trees.jpeg"
+
+  const turntableImg = document.createElement('img')
+  turntableImg.src = "./assets/carousel/turntable.jpeg"
+
+  carousel.appendChild(leftButton)
+  carousel.appendChild(mountainImg)
+  carousel.appendChild(computerImg)
+  carousel.appendChild(treesImg)
+  carousel.appendChild(turntableImg)
+  carousel.appendChild(rightButton)
+
+  leftButton.addEventListener('click', e => {
+
+  })
+
+  leftButton.addEventListener('click', e => {
+    
+  })
+
+  return carousel
+}
