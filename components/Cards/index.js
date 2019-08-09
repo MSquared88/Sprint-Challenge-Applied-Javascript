@@ -27,6 +27,7 @@ jquery
 node
 technology
 */
+
 const cardsContainer = document.querySelector('.cards-container')
 let articleNames = []
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
@@ -38,8 +39,12 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         //         cardsContainer.appendChild(createCard(ele))
         //     })
         // }
-        
+
         res.data.articles.bootstrap.forEach(ele => {
+            cardsContainer.appendChild(createCard(ele))
+        })
+
+        res.data.articles.javascript.forEach(ele => {
             cardsContainer.appendChild(createCard(ele))
         })
 
