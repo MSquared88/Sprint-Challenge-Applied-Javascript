@@ -28,9 +28,17 @@ node
 technology
 */
 const cardsContainer = document.querySelector('.cards-container')
-
+let articleNames = []
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(res => {
+
+        // articleNames = Object.keys(res.data.articles)
+        // for(let i = 0; i < articleNames.length; i++){
+        //     res.data.articles.articleNames[i].forEach(ele => {
+        //         cardsContainer.appendChild(createCard(ele))
+        //     })
+        // }
+        
         res.data.articles.bootstrap.forEach(ele => {
             cardsContainer.appendChild(createCard(ele))
         })
@@ -47,7 +55,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             cardsContainer.appendChild(createCard(ele))
         })
     })
-
 
 
 function createCard(obj){
