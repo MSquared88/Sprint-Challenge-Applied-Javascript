@@ -27,8 +27,16 @@ if(index > imgs.length -1){
 
 
 
-
 carouselContainer.appendChild(createCarousel())
+
+function imgDisplay(){
+  if(imgs[index].stlye.display === "none" || "") {
+    imgs[index].style.display = "block";
+  } else {
+    imgs[index].style.display = "none";
+  }
+}
+
 
 function createCarousel() {
   const carousel = document.createElement('dive')
@@ -75,12 +83,8 @@ function createCarousel() {
     if(index > imgs.length -1){
       index = 0
     }
+    imgDisplay()
 
-    if (imgs[index].stlye.display === "none" || "") {
-      imgs[index].style.display = "block";
-    } else {
-      imgs[index].style.display = "none";
-    }
   })
 
 
@@ -90,9 +94,8 @@ function createCarousel() {
     if(index < 0){
       index = imgs.length -1
     }
+    imgDisplay()
   })
 
   return carousel
 }
-
-
