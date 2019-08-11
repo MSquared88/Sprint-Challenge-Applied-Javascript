@@ -31,35 +31,35 @@ technology
 const cardsContainer = document.querySelector('.cards-container')
 let articleNames = []
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then(res => {
+.then(res => {
 
-        // articleNames = Object.keys(res.data.articles)
-        // for(let i = 0; i < articleNames.length; i++){
-        //     res.data.articles.articleNames[i].forEach(ele => {
-        //         cardsContainer.appendChild(createCard(ele))
-        //     })
-        // }
+    // articleNames = Object.keys(res.data.articles)
+    // for(let i = 0; i < articleNames.length; i++){
+    //     res.data.articles.articleNames[i].forEach(ele => {
+    //         cardsContainer.appendChild(createCard(ele))
+    //     })
+    // }
 
-        res.data.articles.bootstrap.forEach(ele => {
-            cardsContainer.appendChild(createCard(ele))
-        })
-
-        res.data.articles.javascript.forEach(ele => {
-            cardsContainer.appendChild(createCard(ele))
-        })
-
-        res.data.articles.jquery.forEach(ele => {
-            cardsContainer.appendChild(createCard(ele))
-        })
-
-        res.data.articles.node.forEach(ele => {
-            cardsContainer.appendChild(createCard(ele))
-        })
-
-        res.data.articles.technology.forEach(ele => {
-            cardsContainer.appendChild(createCard(ele))
-        })
+    res.data.articles.bootstrap.forEach(ele => {
+        cardsContainer.appendChild(createCard(ele))
     })
+
+    res.data.articles.javascript.forEach(ele => {
+        cardsContainer.appendChild(createCard(ele))
+    })
+
+    res.data.articles.jquery.forEach(ele => {
+        cardsContainer.appendChild(createCard(ele))
+    })
+
+    res.data.articles.node.forEach(ele => {
+        cardsContainer.appendChild(createCard(ele))
+    })
+
+    res.data.articles.technology.forEach(ele => {
+        cardsContainer.appendChild(createCard(ele))
+    })
+})
 
 
 function createCard(obj){
